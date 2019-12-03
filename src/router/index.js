@@ -1,31 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import LatestMovie from '@/components/LatestMovie'
+import Home from '@/pages/dashboard/Home'
+
 
 //layouts
 import FullLayout from '@/components/layouts/FullLayout'
 
-
 Vue.use(VueRouter)
 export default new VueRouter({
-    mode: 'history',
+  mode: 'history',
   routes: [
-    {
+   /*  {
       path: '/',
-      name: 'LatestMovie',
-      component: LatestMovie
-    },
+      name: 'Landing',
+      component: SingleLayout,
+      children: [
+        {
+          path: '/',
+          name: 'HelloWorld',
+          component: HelloWorld,
+        }]
+    }, */
     {
-    path: '/dashboard',
+    path: '/',
     name: 'Dashboard',
     component: FullLayout,
    children: [
         {
             path: '/',
             name: 'Home',
-            component: LatestMovie,
-        }] 
+            component: Home,
+        }
+      ]
+        
     }
   ]
 })
